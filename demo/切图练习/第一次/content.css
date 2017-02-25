@@ -1,0 +1,89 @@
+.banner{
+	height: 570px;
+	position: relative;
+}
+
+.banner-bg{
+	overflow: hidden;
+}
+
+.banner-text{
+	position: absolute;
+	top: 208px;
+	left: 362px;
+}
+
+.info{
+	margin-top: 19px;
+	text-align: center;
+	color: #FFF;
+	font-size: 16px;
+	letter-spacing: 1px
+}
+
+.sl{
+	display: inline-block;
+	width: 40px;
+	border-top: 1px solid #FFF;
+	vertical-align: middle;
+}
+
+.sll{
+	margin-right: 26px;
+}
+
+.slr{
+	margin-left: 26px;
+}
+
+.hot-list{
+	width: 1100PX;
+	height: 798px;
+	margin: 0 auto;
+}
+
+.menu{
+	margin: 0 auto;
+	background-image: url(menu.png);
+	width: 155px;
+	height: 75px;
+	color: #FFF;
+	font-size: 20px;
+	letter-spacing: 1px;
+	text-align: center;
+	line-height: 65px;
+}
+
+.hot-text{
+	width: 494px;
+	height: 321px;
+	margin-top: 20px;
+	float: left;
+}
+
+.textr{
+	margin-left: 112px;
+}
+
+.hot-text i{
+	display: inline-block;
+	border-top: 1px solid #e3e1e1;
+	width: 192px;
+	vertical-align: middle;	
+	margin-left: 44px;
+	margin-right: 44px;
+}
+
+.hot-text p{
+	font-size: 16px;
+	letter-spacing: 1px;
+	color: #555555;
+	margin-top: 62px;
+	margin-bottom: 2px;
+}
+
+.hot-text small{
+	font-size: 12px;
+	line-height: 1px;
+	color: #b7b7b7;
+}
