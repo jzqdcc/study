@@ -18,10 +18,6 @@
 	margin-left: 18px;
 }
 
-.text{
-	margin-top: -48px;
-}
-
 .prev,.next{
 	cursor: pointer;
 	display: none;
@@ -51,17 +47,23 @@
 	background-color: #111;
 }
 
+.dots{
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	right: 0;
+}
+
 .dot{
 	cursor: pointer;
 	display: inline-block;
 	width: 15px;
 	height: 15px;
-	margin-top: 20px;
-	margin-right: 5px;
+	margin-right: 10px;
 	border-radius: 45px;
 	background-color: #999;
 }
 
 .dot:hover,.active{
-	background-color: #666;
+	background-color: #777;
 }

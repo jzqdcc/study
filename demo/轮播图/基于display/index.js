@@ -33,10 +33,10 @@ numUp.onclick = function(){slide(x -= 1)};
 numDw.onclick = function(){slide(x += 1)};
 
 var slides = document.getElementsByClassName("slide-show");
-var dots = document.getElementsByClassName("dot");
+var dotNum = document.getElementsByClassName("dot");
 
 var slides = document.getElementsByClassName("slide-show");
-var dots = document.getElementsByClassName("dot");
+var dotNum = document.getElementsByClassName("dot");
 
 function slide(n){
 	if (n > slides.length-1) {x = 0;}
@@ -44,35 +44,29 @@ function slide(n){
 	for (var i = 0; i < slides.length; i++) {
 		slides[i].style.display = "none";
 	}
-	for (var i = 0; i < dots.length; i++) {
-		dots[i].className = dots[i].className.replace(" active","");
+	for (var i = 0; i < dotNum.length; i++) {
+		dotNum[i].className = dotNum[i].className.replace(" active","");
 	}
 	slides[x].style.display = "block";
-	dots[x].className += " active";
+	dotNum[x].className += " active";
 }
 
 function autoSlide(){
 	for (var i = slides.length - 1; i >= 0; i--) {
 		slides[i].style.display = "none";
 	}
-	for (var i = dots.length - 1; i >= 0; i--) {
-		dots[i].className = dots[i].className.replace(" active","");
+	for (var i = dotNum.length - 1; i >= 0; i--) {
+		dotNum[i].className = dotNum[i].className.replace(" active","");
 	}
 	x++;
 	if (x > slides.length-1) {x = 0}
 	slides[x].style.display = "block";
-	dots[x].className += " active";
+	dotNum[x].className += " active";
 	// setTimeout(autoSlide,2000);
 	
-	if (numUp.style.display.value == "inline-block") {
-		return;
-	
-		else{
-			setTimeout(function(){ 
-			setTimeout(autoSlide, 2000); 
-			}, 2000); 
-		}
-	}
+	setTimeout(function(){ 
+		setTimeout(autoSlide, 2000); 
+	}, 2000); 
 }
 
 autoSlide(x);
