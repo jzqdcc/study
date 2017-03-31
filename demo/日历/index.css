@@ -1,0 +1,91 @@
+*{box-sizing: border-box;}
+
+body {font-family: Verdana,sans-serif;}
+
+ul{
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+
+.container{
+	position: relative;
+}
+
+#prev,#next{
+	cursor: pointer;
+	position: absolute;
+	top: 80px;
+	color: #fff;
+	font-size: 20px;
+}
+
+#prev{
+	left: 25px;
+}
+
+#next{
+	right: 25px;
+}
+
+#prev:hover,#next:hover{
+	color: #000;
+}
+
+.month{
+	width: 100%;
+	padding: 70px 25px;
+	*padding: 70px 0;	/*for ie7不兼容box-sizing*/
+	background-color: #1abc9c;
+	text-align: center;
+	color: #fff;
+	font-size: 20px;
+	letter-spacing: 3px;
+}
+
+.month span{
+	font-size: 18px;
+}
+
+.weekdays{
+	padding: 10px 0;
+	background-color: #ddd;
+}
+
+.weekdays li{
+	display: inline-block;
+	*display: inline;
+	*zoom:1;	/*for ie7不兼容inline-block*/
+	width: 13.6%;
+	text-align: center;
+	color: #666;
+}
+
+.days{
+	padding: 10px 0;
+	background: #eee;
+}
+
+.days li{
+	display: inline-block;
+	*display: inline;
+	*zoom:1;	/*for ie7不兼容inline-block*/
+	width: 13.6%;
+	margin-bottom: 5px;
+	text-align: center;
+	font-size: 12px;
+	color: #777;
+}
+
+/* 添加不同尺寸屏幕的样式 */
+@media screen and (max-width:720px) {
+    .weekdays li, .days li {width: 13.1%;}
+}
+ 
+@media screen and (max-width: 420px) {
+    .weekdays li, .days li {width: 12.5%;}
+}
+ 
+@media screen and (max-width: 290px) {
+    .weekdays li, .days li {width: 12.2%;}
+}

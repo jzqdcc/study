@@ -1,0 +1,38 @@
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1489294146999'); /* IE9*/
+  src: url('iconfont.eot?t=1489294146999#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1489294146999') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1489294146999') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1489294146999#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:36px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #d91002;
+}
+
+.icon-liuyan:before { content: "\e6cc"; }
+
+.icon-fangzi:before { content: "\e62f"; }
+
+.icon-purse:before { content: "\e65b"; }
+
+.icon-icon:before { content: "\e601"; }
+
+.icon-iconmofa:before { content: "\e64b"; }
+
+.icon-chuxuguan01:before { content: "\e60f"; }
+
+.icon-gangbi:before { content: "\e637"; }
+
+.icon-comment:before { content: "\e600"; }
+
+.icon-20:before { content: "\e668"; }
+
+.icon-maikefeng:before { content: "\e669"; }
+
