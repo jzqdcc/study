@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AJAX</title>
+  <style>
+    input, select, button, h1 {
+        margin-bottom: 10px;
+        font-size: 22px;
+        line-height: 1.4;
+    }
+    p {
+        margin-bottom: 50px;
+    }
+  </style>
+</head>
+<body>
+    <h1>员工查询</h1>
+    <form action="#">
+        <label for="keyword">输入查询编号：</label>
+        <input type="text" id="keyword"><br>
+        <button id="search">查询</button>
+    </form>
+    <p id="searchResult"></p>
+
+    <h1>员工新建</h1>
+    <form action="#">
+        <label for="staffName">输入员工姓名：</label>
+        <input type="text" id="staffName"><br>
+        <label for="staffNumber">输入员工编号：</label>
+        <input type="text" id="staffNumber"><br>
+        <label for="staffSex">选择员工性别：</label>
+        <select id="staffSex">
+            <option>男</option>
+            <option>女</option>
+        </select><br>
+        <label for="staffJob">输入员工职位：</label>
+        <input type="text" id="staffJob"><br>
+        <button id="save">保存</button>
+    </form>
+    <p id="createResult"></p>
+
+    <!-- 使用jq -->
+    <script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.js"></script>
+    <script>
+        jQuery(document).ready(function($) {
+            $('#search').click(function () {
+                $.ajax({
+                    url: 'server.php',
+                    type: 'GET',
+                    dataType: 'json',
+                    data: {'number':$('#keyword').val()},
+                    success:function (data) {
+                        if (data.success) { 
+                            $("#searchResult").html(data.msg);
+                        } else {
+                            $("#searchResult").html("错误：" + data.msg);
+                        }
+                    },
+                    error: function(jqXHR){     
+                        alert("错误：" + jqXHR.status); 
+                    }
+                });
+            });
+
+            $('#save').click(function() {
+                $.ajax({
+                    url: 'server.php',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                            name: $("#staffName").val(), 
+                            number: $("#staffNumber").val(), 
+                            sex: $("#staffSex").val(), 
+                            job: $("#staffJob").val()
+                        },
+                    success:function (data) {
+                        if (data.success) { 
+                            $("#createResult").html(data.msg);
+                        } else {
+                            $("#createResult").html("错误：" + data.msg);
+                        }
+                    },
+                    error: function(jqXHR){     
+                        alert("错误：" + jqXHR.status); 
+                    }
+                });
+            });
+
+        });
+    </script>
+
+    <!-- 使用js -->
+    <!-- <script>
+        document.getElementById('search').onclick = function () {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', "server.php?number="+document.getElementById('keyword').value);
+            xhr.send();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        var data = JSON.parse(xhr.responseText);
+                        if (data.success) {
+                            document.getElementById('searchResult').innerHTML = data.msg;
+                        }else {
+                            document.getElementById("searchResult").innerHTML = "错误：" + data.msg;
+                        }
+                    }else{
+                        alert('错误:'+xhr.status);
+                    }
+                }
+            };
+        };
+
+        document.getElementById('save').onclick = function () {
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'server.php');
+            var data = 'name=' + document.getElementById('staffName').value + 
+                        '&number=' + document.getElementById('staffNumber').value + 
+                        '&sex=' + document.getElementById('staffSex').value + 
+                        '&job=' + document.getElementById('staffJob').value;
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xhr.send(data);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4){
+                    if (xhr.status === 200){
+                        var data = JSON.parse(xhr.responseText);
+                        if (data.success) {
+                            document.getElementById('createResult').innerHTML = data.msg;
+                        }else {
+                            document.getElementById("createResult").innerHTML = "错误：" + data.msg;
+                        }
+                    }else{
+                        alert('错误:'+xhr.status);
+                    }
+                }
+            };
+        };
+    </script> -->
+</body>
+</html>

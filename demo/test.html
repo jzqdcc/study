@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+    p {
+        color: red;
+    }
+    div{
+        width:200px; 
+        height: 100px; 
+        background-color: yellow;
+        color:red;
+    }
+    </style>
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+</head>
+
+<body>
+    <h2>animate(上)</h2>
+    <p>慕课网,专注分享</p>
+    <div id="aaron">内部动画</div>
+    点击观察动画效果：
+    <select id="animation">
+        <option value="1">动画1</option>
+        <option value="2">动画2</option>
+        <option value="3">动画3</option>
+        <option value="4">动画4</option>
+    </select>
+    <input id="exec" type="button" value="执行动画">
+    <script type="text/javascript">
+     $('#aaron').mouseenter(function(){
+        var v=$('#animation').val();
+        var $aaron=$(this);
+        $aaron.animate({
+            width:120,height:120,opacity:0.5
+        },300);
+     })
+    </script>
+</body>
+</html>
