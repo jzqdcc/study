@@ -93,7 +93,12 @@
     <!-- 使用js -->
     <!-- <script>
         document.getElementById('search').onclick = function () {
-            var xhr = new XMLHttpRequest();
+            if (window.XMLHttpRequest) {
+                var xhr = new XMLHttpRequest();
+            } else if (window.ActiveObjectX) {
+                var xhr = new window.ActiveObjectX('Microsoft.XMLHTTP');
+            }
+            
             xhr.open('GET', "server.php?number="+document.getElementById('keyword').value);
             xhr.send();
             xhr.onreadystatechange = function () {
