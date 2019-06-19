@@ -1032,3 +1032,63 @@
 	border: 1px solid #e5e5e5;
 	margin-bottom: 10px;
 }
+
+.load {
+	height: 138px;
+	border: 1px solid #e5e5e5;
+	border-radius: 5px;
+}
+
+.load h2 {
+	width: 218px;
+	height: 13px;
+	padding: 10px 10px;
+	border-bottom: 1px solid #e5e5e5;
+	border-radius: 5px 5px 0 0;
+	font-size: 14px;
+	background: -webkit-linear-gradient(bottom,#fff,#ededed); /* Safari 5.1 - 6.0 */
+       background: -moz-linear-gradient(bottom,#fff,#ededed); /* Firefox 3.6 - 15 */
+         background: -o-linear-gradient(bottom,#fff,#ededed); /* Opera 11.1 - 12.0 */
+		    background: linear-gradient(to bottom,#fff,#ededed);
+	background-color: #f9f9f9\9;	/*for IE10-*/
+}
+
+@media all and (min-width:0) {	/*for IE9*/
+	.load h2 {
+		margin-right: 1px;
+	}
+}
+
+.load h2 span {
+	margin-right: 6px;
+	text-transform: uppercase;
+	color: #cc0d13;
+}
+
+.load form {
+	margin: 7px;
+	padding: 2px 10px 10px;
+	border-bottom: 1px solid #e5e5e5;
+	font-size: 12px;
+}
+
+.username, .password {
+	width: 88px;
+	margin-top: 8px;
+}
+
+.button {
+	cursor: pointer;
+	margin-left: 5px;
+	width: 50px;
+	height: 22px;
+	border: none;
+	border-radius: 25px;
+	box-shadow: 2px 2px 2px #666;
+	background-color: #df0000;
+	color: #fff;
+}
+
+.load a {
+	margin-left: 25px;
+}
